@@ -1,0 +1,63 @@
+/* Header.module.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-bg-color);
+  /* background-color: #ffffff; */
+  /* background-color: #CDD2D3; */
+  /* background-color: #C7CCCD; */
+  /* background-color: #BFC4C5; */
+  /* background-color: #B8BDBE; */
+  padding: 2rem 2rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logoContainer {
+  /* Additional styles if needed */
+}
+
+.logo {
+  /* Additional styles if needed */
+}
+
+.hamburger {
+  display: none; /* It hides the hamburger on larger screens by default */
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem; /* You can adjust the position as needed */
+  right: 1rem;
+}
+
+.nav {
+  display: flex; /* Show the nav by default */
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.navList {
+  display: flex; /* Lays out nav items in a row */
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  margin-left: auto; /* This will push the nav list to the right side */
+}
+
+.navItem {
+  padding: 0 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* This will show the hamburger menu on smaller screens */
+  }
+
+  .nav {
+    display: none; /* This will hide the nav bar on smaller screens */
+  }
+}

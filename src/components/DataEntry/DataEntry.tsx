@@ -14,7 +14,12 @@ const DataEntry = () => {
 
     const lines = textAreaValue
       .split("\n")
-      .filter((line) => line.trim() !== "" && !line.trim().startsWith("#"));
+      .filter(
+        (line) =>
+          line.trim() !== "" &&
+          !line.trim().startsWith("#") &&
+          !line.trim().startsWith("No"),
+      );
 
     let keys = [];
     let values = [];

@@ -9,6 +9,19 @@
   background-color: #f9f9f9;
 }
 
+.preview {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  width: 100%;
+  max-width: 600px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
 .textArea {
   width: 100%;
   max-width: 600px; /* Feel free to adjust */

@@ -5,12 +5,12 @@ const DataEntry = () => {
   const [textAreaValue, setTextAreaValue] = useState("");
   const [csvData, setCsvData] = useState("");
   const [keysStored, setKeysStored] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(false); // New state to track loading
+  const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleProcess = () => {
-    setIsLoading(true); // Start loading
-    setSuccessMessage(""); // Reset success message
+    setIsLoading(true);
+    setSuccessMessage("");
 
     const lines = textAreaValue
       .split("\n")
@@ -33,7 +33,6 @@ const DataEntry = () => {
         : "";
 
       if (!csvData && !keysStored.includes(key)) {
-        // Add keys only if they're not already stored and it's the first batch
         keys.push(`"${key}"`);
       }
 
@@ -50,11 +49,11 @@ const DataEntry = () => {
         : csvData + valuesCsvContent;
 
     setCsvData(csvContent);
-    setTextAreaValue(""); // Clear the textarea
-    setIsLoading(false); // End loading
+    setTextAreaValue("");
+    setIsLoading(false);
     setSuccessMessage(
       "Data processed successfully. Ready to add more or download.",
-    ); // Set success message
+    );
   };
 
   const handleDownload = () => {
@@ -65,6 +64,12 @@ const DataEntry = () => {
     link.href = URL.createObjectURL(blob);
     link.download = "data.csv";
     link.click();
+  };
+
+  const handleClearData = () => {
+    setCsvData("");
+    setKeysStored([]);
+    setSuccessMessage("");
   };
 
   return (
@@ -78,6 +83,13 @@ const DataEntry = () => {
       {isLoading && <p>Processing...</p>}
       {successMessage && (
         <p className={styles.successMessage}>{successMessage}</p>
+      )}
+      {csvData && (
+        <div className={styles.preview}>
+          <strong>CSV Data Preview:</strong>
+          <br />
+          {csvData}
+        </div>
       )}
       <div>
         <button
@@ -95,6 +107,14 @@ const DataEntry = () => {
           disabled={!csvData}
         >
           Download CSV
+        </button>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={handleClearData}
+          disabled={!csvData}
+        >
+          Clear Data
         </button>
       </div>
     </div>

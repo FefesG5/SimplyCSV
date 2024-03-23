@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./DataEntry.module.css";
+import Spinner from "../Spinner/Spinner";
 
 const DataEntry = () => {
   const [textAreaValue, setTextAreaValue] = useState("");
@@ -69,12 +70,17 @@ const DataEntry = () => {
   return (
     <div className={styles.dataEntryContainer}>
       <div className={styles.flexContainer}>
-        <textarea
-          className={styles.textArea}
-          value={textAreaValue}
-          onChange={(e) => setTextAreaValue(e.target.value)}
-          placeholder="Enter your data here..."
-        ></textarea>
+        {isProcessing ? (
+          <Spinner /> // Show the spinner when processing
+        ) : (
+          <textarea
+            className={styles.textArea}
+            value={textAreaValue}
+            onChange={(e) => setTextAreaValue(e.target.value)}
+            placeholder="Enter your data here..."
+            disabled={isProcessing} // Disable text area when processing
+          ></textarea>
+        )}
         {csvData && (
           <div className={styles.preview}>
             <strong>CSV Data Preview:</strong>

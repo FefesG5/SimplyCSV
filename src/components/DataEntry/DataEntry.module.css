@@ -24,8 +24,8 @@
 
 .textArea {
   width: 100%;
-  max-width: 600px; /* Feel free to adjust */
-  height: 150px; /* Adjust height as you see fit */
+  max-width: 650px;
+  height: 450px;
   margin-bottom: 20px;
   border-radius: 4px;
   border: 1px solid #ccc;

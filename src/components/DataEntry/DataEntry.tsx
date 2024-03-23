@@ -5,12 +5,10 @@ const DataEntry = () => {
   const [textAreaValue, setTextAreaValue] = useState("");
   const [csvData, setCsvData] = useState("");
   const [keysStored, setKeysStored] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const handleProcess = () => {
-    setIsLoading(true);
-    setSuccessMessage("");
+    setIsProcessing(true);
 
     const lines = textAreaValue
       .split("\n")
@@ -50,10 +48,7 @@ const DataEntry = () => {
 
     setCsvData(csvContent);
     setTextAreaValue("");
-    setIsLoading(false);
-    setSuccessMessage(
-      "Data processed successfully. Ready to add more or download.",
-    );
+    setIsProcessing(false);
   };
 
   const handleDownload = () => {
@@ -69,7 +64,6 @@ const DataEntry = () => {
   const handleClearData = () => {
     setCsvData("");
     setKeysStored([]);
-    setSuccessMessage("");
   };
 
   return (

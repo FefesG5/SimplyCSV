@@ -74,24 +74,22 @@ const DataEntry = () => {
 
   return (
     <div className={styles.dataEntryContainer}>
-      <textarea
-        className={styles.textArea}
-        value={textAreaValue}
-        onChange={(e) => setTextAreaValue(e.target.value)}
-        placeholder="Enter your data here..."
-      ></textarea>
-      {isLoading && <p>Processing...</p>}
-      {successMessage && (
-        <p className={styles.successMessage}>{successMessage}</p>
-      )}
-      {csvData && (
-        <div className={styles.preview}>
-          <strong>CSV Data Preview:</strong>
-          <br />
-          {csvData}
-        </div>
-      )}
-      <div>
+      <div className={styles.flexContainer}>
+        <textarea
+          className={styles.textArea}
+          value={textAreaValue}
+          onChange={(e) => setTextAreaValue(e.target.value)}
+          placeholder="Enter your data here..."
+        ></textarea>
+        {csvData && (
+          <div className={styles.preview}>
+            <strong>CSV Data Preview:</strong>
+            <br />
+            {csvData}
+          </div>
+        )}
+      </div>
+      <div className={styles.buttonsContainer}>
         <button
           className={styles.button}
           type="button"
@@ -103,18 +101,18 @@ const DataEntry = () => {
         <button
           className={styles.button}
           type="button"
-          onClick={handleDownload}
-          disabled={!csvData}
-        >
-          Download CSV
-        </button>
-        <button
-          className={styles.button}
-          type="button"
           onClick={handleClearData}
           disabled={!csvData}
         >
           Clear Data
+        </button>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={handleDownload}
+          disabled={!csvData}
+        >
+          Download CSV
         </button>
       </div>
     </div>

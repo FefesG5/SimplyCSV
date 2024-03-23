@@ -9,29 +9,36 @@
   background-color: #f9f9f9;
 }
 
-.preview {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f2f2f2;
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  max-width: 600px;
-  overflow: auto;
-  white-space: pre-wrap;
-  font-family: monospace;
 }
 
-.textArea {
-  width: 100%;
-  max-width: 650px;
-  height: 450px;
+.textArea,
+.preview {
   margin-bottom: 20px;
   border-radius: 4px;
   border: 1px solid #ccc;
   padding: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
+}
+
+.textArea {
+  width: 50%;
+  margin-right: 20px; /* Adds some space between the text area and the preview */
+  height: 300px; /* Keeps the taller text area */
+}
+
+.preview {
+  width: 50%; /* Allows the preview area to grow */
+  background-color: #f2f2f2;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+  height: 300px;
 }
 
 .button {

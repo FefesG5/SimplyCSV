@@ -70,17 +70,13 @@ const DataEntry = () => {
   return (
     <div className={styles.dataEntryContainer}>
       <div className={styles.flexContainer}>
-        {isProcessing ? (
-          <Spinner /> // Show the spinner when processing
-        ) : (
-          <textarea
-            className={styles.textArea}
-            value={textAreaValue}
-            onChange={(e) => setTextAreaValue(e.target.value)}
-            placeholder="Enter your data here..."
-            disabled={isProcessing} // Disable text area when processing
-          ></textarea>
-        )}
+        <textarea
+          className={styles.textArea}
+          value={textAreaValue}
+          onChange={(e) => setTextAreaValue(e.target.value)}
+          placeholder="Enter your data here..."
+          disabled={isProcessing} // Disable text area when processing
+        ></textarea>
         {csvData && (
           <div className={styles.preview}>
             <strong>CSV Data Preview:</strong>
@@ -94,9 +90,15 @@ const DataEntry = () => {
           className={styles.button}
           type="button"
           onClick={handleProcess}
-          disabled={!textAreaValue}
+          disabled={!textAreaValue || isProcessing}
         >
-          Process
+          {isProcessing ? (
+            <>
+              <Spinner /> Processing...
+            </>
+          ) : (
+            "Process"
+          )}
         </button>
         <button
           className={styles.button}

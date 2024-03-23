@@ -50,6 +50,8 @@
   background-color: #007bff;
   color: white;
   font-weight: bold;
+
+  min-width: 190px;
 }
 
 .button:disabled {

@@ -14,6 +14,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .textArea,
@@ -60,4 +61,23 @@
 
 .button:not(:disabled):hover {
   background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+
+  .textArea,
+  .preview {
+    width: 100%; /* Full width for smaller screens */
+    margin-right: 0; /* Removes margin between text area and preview on smaller screens */
+  }
+
+  .button {
+    width: 100%; /* Full width buttons on smaller screens */
+    margin-right: 0;
+    margin-bottom: 10px; /* Adds spacing between buttons */
+  }
 }

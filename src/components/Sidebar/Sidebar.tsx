@@ -38,6 +38,9 @@ const Sidebar = ({ isOpen, closeSidebar }: SidebarProps) => {
           <Link href="/about">About</Link>
         </li>
         <li className={styles.navItem} onClick={closeSidebar}>
+          <Link href="/administrator-access">Administrator Access</Link>
+        </li>
+        <li className={styles.navItem} onClick={closeSidebar}>
           <Link href="/contact">Contact</Link>
         </li>
       </ul>

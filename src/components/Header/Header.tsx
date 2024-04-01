@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             <Link href="/about">About</Link>
           </li>
           <li className={styles.navItem} onClick={closeSidebar}>
-            <Link href="/adminstrator-access">Adminstrator Access</Link>
+            <Link href="/Administrator-access">Administrator Access</Link>
           </li>
           <li className={styles.navItem} onClick={closeSidebar}>
             <Link href="/contact">Contact</Link>

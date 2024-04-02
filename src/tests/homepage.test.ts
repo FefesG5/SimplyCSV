@@ -20,6 +20,30 @@ test.describe("Home Page test", () => {
     );
   });
 
+  test.describe("Home Page test", () => {
+    test("sidebar opens and closes", async ({ page }) => {
+      await page.setViewportSize({ width: 375, height: 667 });
+      await page.goto("http://localhost:3000");
+
+      // Locate and click the hamburger icon to open the sidebar
+      const hamburger = page.locator("button", { hasText: "☰" });
+      await hamburger.click();
+
+      // Ensure the sidebar is visible
+      const sidebar = page.locator("aside");
+      await expect(sidebar).toBeVisible();
+
+      // Click outside the sidebar to close it
+      // Choose a selector that exists outside the sidebar
+      // For example, the main content area or a header logo could be good targets
+      const outsideArea = page.locator("header");
+      await outsideArea.click();
+
+      // Verify the sidebar is closed
+      await expect(sidebar).not.toBeVisible();
+    });
+  });
+
   test("homepage has a title 'Simply CSV'", async ({ page }) => {
     // Check for page title
     await expect(page).toHaveTitle(/Simply CSV/);

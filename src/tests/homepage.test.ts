@@ -52,4 +52,16 @@ test.describe("Home Page test", () => {
     const heading = page.locator("h1", { hasText: "Simply CSV" });
     await expect(heading).toBeVisible();
   });
+
+  test("footer should display correct information", async ({ page }) => {
+    // Check for the presence of 'Powered by' text and Vercel logo in the footer
+    const poweredByText = page.locator("footer >> text=Powered by");
+    await expect(poweredByText).toBeVisible();
+
+    const vercelLink = page.locator("footer >> a[href='https://vercel.com']");
+    await expect(vercelLink).toBeVisible();
+
+    const vercelLogo = vercelLink.locator("img[alt='Vercel Logo']");
+    await expect(vercelLogo).toBeVisible();
+  });
 });

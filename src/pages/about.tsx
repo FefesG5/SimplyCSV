@@ -2,7 +2,7 @@ import styles from "./about.module.css";
 
 const About: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="about-main-content">
       <h2 className={styles.heading}>Welcome to Simply CSV!</h2>
       <p className={styles.paragraph}>
         This intuitive tool is designed to make your data entry tasks simpler

@@ -11,5 +11,10 @@ test.describe("About Page test", () => {
       hasText: "Welcome to Simply CSV!",
     });
     await expect(mainHeading).toBeVisible();
+
+    const introParagraph = page.locator(
+      "text=This intuitive tool is designed to make your data entry tasks simpler and more efficient.",
+    );
+    await expect(introParagraph).toBeVisible();
   });
 });

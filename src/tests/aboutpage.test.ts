@@ -16,5 +16,14 @@ test.describe("About Page test", () => {
       "text=This intuitive tool is designed to make your data entry tasks simpler and more efficient.",
     );
     await expect(introParagraph).toBeVisible();
+
+    const mainContent = page.locator("[data-testid='about-main-content']");
+    const listItems = mainContent.locator("ul >> li");
+    await expect(listItems).toHaveCount(8);
+
+    await expect(listItems.first()).toContainText("Enter Your Data");
+    await expect(listItems.nth(1)).toContainText("Process Your Data:");
+    await expect(listItems.nth(2)).toContainText("Download Your CSV");
+    await expect(listItems.nth(3)).toContainText("Clear Data:");
   });
 });

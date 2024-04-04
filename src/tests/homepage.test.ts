@@ -7,6 +7,7 @@ test.describe("Home Page test", () => {
     await page.goto("http://localhost:3000");
   });
 
+  // Header Test
   test("navigation links are present and correct", async ({ page }) => {
     // Check for the existence of navigation links
     await expect(page.locator("text=About")).toHaveAttribute("href", "/about");
@@ -44,6 +45,7 @@ test.describe("Home Page test", () => {
     });
   });
 
+  // Home Page body test
   test("homepage has a title 'Simply CSV'", async ({ page }) => {
     // Check for page title
     await expect(page).toHaveTitle(/Simply CSV/);

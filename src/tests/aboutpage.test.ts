@@ -25,5 +25,10 @@ test.describe("About Page test", () => {
     await expect(listItems.nth(1)).toContainText("Process Your Data:");
     await expect(listItems.nth(2)).toContainText("Download Your CSV");
     await expect(listItems.nth(3)).toContainText("Clear Data:");
+
+    await expect(listItems.nth(4)).toContainText("データを入力する：");
+    await expect(listItems.nth(5)).toContainText("データを処理する：");
+    await expect(listItems.nth(6)).toContainText("CSV をダウンロードする：");
+    await expect(listItems.last()).toContainText("データをクリアする：");
   });
 });

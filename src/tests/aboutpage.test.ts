@@ -5,7 +5,9 @@ test.describe("About Page test", () => {
     await page.goto("http://localhost:3000/about");
   });
 
-  test("About page contains correct headings and content", async ({ page }) => {
+  test("aboutpage contains correct English & Japanese headings", async ({
+    page,
+  }) => {
     // Check for the main heading
     const mainHeading = page.locator("h2", {
       hasText: "Welcome to Simply CSV!",
@@ -17,6 +19,20 @@ test.describe("About Page test", () => {
     );
     await expect(introParagraph).toBeVisible();
 
+    const japaneseHeading = page.locator("h3", {
+      hasText: "使い方",
+    });
+    await expect(japaneseHeading).toBeVisible();
+
+    const japaneseIntroParagraph = page.locator(
+      "text=Simply CSVへようこそ!この直感的なツールは、あなたのデータ入力作業をより簡単で効率的にするために設計されています。使い始めるには、以下の手順に従ってください:",
+    );
+    await expect(japaneseIntroParagraph).toBeVisible();
+  });
+
+  test("aboutpage contains correct English & Japanese list content", async ({
+    page,
+  }) => {
     const mainContent = page.locator("[data-testid='about-main-content']");
     const listItems = mainContent.locator("ul >> li");
     await expect(listItems).toHaveCount(8);

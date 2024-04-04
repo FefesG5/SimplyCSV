@@ -21,7 +21,7 @@ test.describe("Home Page test", () => {
     );
   });
 
-  test.describe("Home Page test", () => {
+  test.describe("sidebar tests", () => {
     test("sidebar opens and closes", async ({ page }) => {
       await page.setViewportSize({ width: 375, height: 667 });
       await page.goto("http://localhost:3000");

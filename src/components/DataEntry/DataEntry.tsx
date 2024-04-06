@@ -7,6 +7,7 @@ const DataEntry = () => {
   const [csvData, setCsvData] = useState("");
   const [keysStored, setKeysStored] = useState<string[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [fileName, setFilename] = useState("");
 
   const handleProcess = () => {
     setIsProcessing(true);

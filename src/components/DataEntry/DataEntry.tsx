@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./DataEntry.module.css";
-import Spinner from "../Spinner/Spinner";
+import ProcessingButton from "../ProcessingButton/ProcessingButton";
 
 const DataEntry = () => {
   const [textAreaValue, setTextAreaValue] = useState("");
@@ -86,20 +86,13 @@ const DataEntry = () => {
         )}
       </div>
       <div className={styles.buttonsContainer}>
-        <button
-          className={styles.button}
-          type="button"
+        <ProcessingButton
+          isProcessing={isProcessing}
           onClick={handleProcess}
           disabled={!textAreaValue || isProcessing}
         >
-          {isProcessing ? (
-            <>
-              <Spinner /> Processing...
-            </>
-          ) : (
-            "Process"
-          )}
-        </button>
+          Process
+        </ProcessingButton>
         <button
           className={styles.button}
           type="button"

@@ -25,7 +25,7 @@ const GoogleSignIn: React.FC<SignInProps> = ({ setError }) => {
   return (
     <div className={styles.signInContainer}>
       <p className={styles.signInText}>
-        Please sign in to access educator features
+        Please sign in to access Administrator features
       </p>
       <button
         className={styles.googleSignInButton}

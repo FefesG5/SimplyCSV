@@ -9,6 +9,8 @@ import {
 } from "firebase/firestore";
 import GoogleSignIn from "@/components/GoogleSignIn/GoogleSignIn";
 import { app } from "../../firebaseConfig";
+import Spinner from "@/components/Spinner/Spinner";
+import styles from "./AdministratorAccess.module.css";
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -58,7 +60,11 @@ const AdministratorAccess: React.FC = () => {
   };
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return (
+      <div className={styles.spinnerContainer}>
+        <Spinner />
+      </div>
+    );
   }
 
   if (!isAuthenticated) {

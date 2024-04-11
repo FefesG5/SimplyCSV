@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { getAuth, signOut } from "firebase/auth";
 import {
   getFirestore,
@@ -19,6 +20,10 @@ const AdministratorAccess: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [userProfile, setUserProfile] = useState({
+    name: "",
+    photoUrl: "",
+  });
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -35,6 +40,10 @@ const AdministratorAccess: React.FC = () => {
         );
         if (administrator) {
           setIsAuthenticated(true);
+          setUserProfile({
+            name: user.displayName || "User",
+            photoUrl: user.photoURL || "",
+          });
           setError("");
         } else {
           setError("You are not authorised. Please contact Head Administrator");
@@ -79,6 +88,13 @@ const AdministratorAccess: React.FC = () => {
     <div>
       {/* Render your authenticated UI here */}
       <h1>Authenticated</h1>
+      <div>Hello, {userProfile.name}</div>
+      <Image
+        src={userProfile.photoUrl}
+        width={100}
+        height={100}
+        alt="User Profile"
+      />
       <button onClick={signOutUser}>Sign out</button>
     </div>
   );

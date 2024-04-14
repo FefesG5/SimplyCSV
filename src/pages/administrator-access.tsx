@@ -11,6 +11,7 @@ import {
 import GoogleSignIn from "@/components/GoogleSignIn/GoogleSignIn";
 import { app } from "../../firebaseConfig";
 import Spinner from "@/components/Spinner/Spinner";
+import DataEntry from "@/components/DataEntry/DataEntry";
 import styles from "./AdministratorAccess.module.css";
 
 const auth = getAuth(app);

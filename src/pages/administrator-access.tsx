@@ -86,17 +86,21 @@ const AdministratorAccess: React.FC = () => {
     );
   }
   return (
-    <div>
-      {/* Render your authenticated UI here */}
-      <h1>Authenticated</h1>
-      <div>Hello, {userProfile.name}</div>
-      <Image
-        src={userProfile.photoUrl}
-        width={100}
-        height={100}
-        alt="User Profile"
-      />
-      <button onClick={signOutUser}>Sign out</button>
+    <div className={styles.container}>
+      <div className={styles.userProfile}>
+        <Image
+          src={userProfile.photoUrl}
+          width={100}
+          height={100}
+          alt="User Profile"
+        />
+      </div>
+      <div className={styles.userInfo}>Hello, {userProfile.name}</div>
+      <div className={styles.buttonsContainer}>
+        <button className={styles.button} onClick={signOutUser}>
+          Sign out
+        </button>
+      </div>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import GoogleSignIn from "@/components/GoogleSignIn/GoogleSignIn";
 import { app } from "../../firebaseConfig";
 import Spinner from "@/components/Spinner/Spinner";
 import DataEntry from "@/components/DataEntry/DataEntry";
+import Dashboard from "@/components/Dashboard/Dashboard";
 import styles from "./AdministratorAccess.module.css";
 
 const auth = getAuth(app);
@@ -85,23 +86,6 @@ const AdministratorAccess: React.FC = () => {
       </>
     );
   }
-  return (
-    <div className={styles.container}>
-      <div className={styles.userProfile}>
-        <Image
-          src={userProfile.photoUrl}
-          width={100}
-          height={100}
-          alt="User Profile"
-        />
-      </div>
-      <div className={styles.userInfo}>Hello, {userProfile.name}</div>
-      <div className={styles.buttonsContainer}>
-        <button className={styles.button} onClick={signOutUser}>
-          Sign out
-        </button>
-      </div>
-    </div>
-  );
+  return <Dashboard userProfile={userProfile} signOutUser={signOutUser} />;
 };
 export default AdministratorAccess;

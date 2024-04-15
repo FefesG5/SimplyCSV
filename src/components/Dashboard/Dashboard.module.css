@@ -1,0 +1,23 @@
+/* Dashboard.module.css */
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.userProfile {
+  margin-bottom: 10px;
+}
+
+.userInfo {
+  margin-bottom: 20px;
+}
+
+.signOutButton {
+  padding: 8px 16px;
+  background-color: #f00;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

@@ -23,7 +23,7 @@ const Dashboard: React.FC<DashboardProps> = ({ userProfile, signOutUser }) => {
         />
       </div>
       <div className={styles.userInfo}>
-        Hello, {userProfile.name || "Guest"}
+        Logged in successfully, {userProfile.name || "Guest"}.
       </div>
       <button className={styles.signOutButton} onClick={signOutUser}>
         Sign Out

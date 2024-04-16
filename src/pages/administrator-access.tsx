@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { getAuth, signOut } from "firebase/auth";
 import {
   getFirestore,

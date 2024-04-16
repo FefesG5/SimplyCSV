@@ -13,6 +13,7 @@ import Spinner from "@/components/Spinner/Spinner";
 import DataEntry from "@/components/DataEntry/DataEntry";
 import Dashboard from "@/components/Dashboard/Dashboard";
 import styles from "./AdministratorAccess.module.css";
+import SignInError from "@/components/SignInError/SignInError";
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -80,7 +81,7 @@ const AdministratorAccess: React.FC = () => {
   if (!isAuthenticated) {
     return (
       <>
-        {error && <p>{error}</p>}
+        {error && <SignInError message={error} />}
         <GoogleSignIn setError={setError} />
       </>
     );

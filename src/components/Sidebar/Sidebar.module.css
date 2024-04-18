@@ -47,6 +47,6 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 45%; /* Adjust sidebar width on smaller screens */
+    width: 55%; /* Adjust sidebar width on smaller screens */
   }
 }

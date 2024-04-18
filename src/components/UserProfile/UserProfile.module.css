@@ -1,0 +1,15 @@
+.userProfileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userImageContainer {
+  margin-bottom: 10px;
+}
+
+.userName {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Dashboard.module.css";
+import SignOutButton from "../SignOutButton/SignOutButton";
 
 interface UserProfileProps {
   name: string;
@@ -25,9 +26,7 @@ const Dashboard: React.FC<DashboardProps> = ({ userProfile, signOutUser }) => {
       <div className={styles.userInfo}>
         Logged in successfully, {userProfile.name || "Guest"}.
       </div>
-      <button className={styles.signOutButton} onClick={signOutUser}>
-        Sign Out
-      </button>
+      <SignOutButton signOutUser={signOutUser} />
     </div>
   );
 };

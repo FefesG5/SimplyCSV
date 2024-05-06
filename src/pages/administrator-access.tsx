@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
-import {
-  getFirestore,
-  collection,
-  query,
-  where,
-  getDocs,
-} from "firebase/firestore";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
 import GoogleSignIn from "@/components/GoogleSignIn/GoogleSignIn";
 import { app } from "../../firebaseConfig";
 import Spinner from "@/components/Spinner/Spinner";
@@ -31,24 +25,22 @@ const AdministratorAccess: React.FC = () => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       setLoading(true);
       if (user) {
-        // Check if user is in the 'educators' list
-        const administratorQuery = query(
-          collection(db, "administrators"),
-          where("email", "==", user.email),
-        );
-        const querySnapshot = await getDocs(administratorQuery);
-        const administrator = querySnapshot.docs.find(
-          (doc) => doc.data().isAuthorized,
-        );
-        if (administrator) {
+        // Fetch the document directly by using the email as the document ID
+        const adminDocRef = doc(db, "administrators", user.email || "");
+        const adminDocSnap = await getDoc(adminDocRef);
+
+        // Check if the document exists and is authorized
+        if (adminDocSnap.exists() && adminDocSnap.data().isAuthorized) {
           setIsAuthenticated(true);
           setUserProfile({
-            name: user.displayName || "User",
+            name: adminDocSnap.data().name,
             photoUrl: user.photoURL || "",
           });
           setError("");
         } else {
-          setError("You are not authorised. Please contact Head Administrator");
+          setError(
+            "You are not authorized. Please contact Head Administrator.",
+          );
           await signOut(auth);
         }
       } else {
@@ -64,7 +56,7 @@ const AdministratorAccess: React.FC = () => {
     try {
       await signOut(auth);
       setIsAuthenticated(false); // Ensure the user is set as not authenticated
-      setError(""); // Optionally reset the error state
+      setError("");
     } catch (error) {
       setError("Error signing out. Please try again.");
     }

@@ -15,11 +15,11 @@ interface DashboardProps {
 const Dashboard: React.FC<DashboardProps> = ({ userProfile, signOutUser }) => {
   return (
     <div className={styles.dashboardContainer}>
+      <div className={styles.mainSection}>Welcome to Dashboard</div>
       <div className={styles.userSection}>
         <UserProfile name={userProfile.name} photoUrl={userProfile.photoUrl} />
         <SignOutButton signOutUser={signOutUser} />
       </div>
-      <div className={styles.mainSection}>Welcome to Dashboard</div>
     </div>
   );
 };

@@ -66,6 +66,14 @@
   background-color: #0056b3;
 }
 
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the start */
+  gap: 10px; /* Adds space between buttons */
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .flexContainer {

@@ -23,11 +23,11 @@ const Header: React.FC = () => {
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image
-            src="/next.svg" // Assuming you have a Next.js logo SVG in your public directory
+            src="/next.svg"
             alt="Next.js Logo"
             className={styles.logo}
-            width={128} // Adjust to the size of your actual logo
-            height={64} // Adjust to the size of your actual logo
+            width={128}
+            height={64}
           />
         </Link>
       </div>

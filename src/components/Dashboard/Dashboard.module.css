@@ -48,3 +48,24 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    padding: 5px; /* Further reduce padding */
+  }
+
+  .mainSection {
+    width: 100%;
+    margin-right: 0; /* Remove margin */
+    margin-bottom: 5px; /* Further reduce margin */
+    padding: 0.25rem; /* Further reduce padding */
+    height: auto;
+  }
+
+  .userSection {
+    width: 100%;
+    padding: 5px; /* Further reduce padding */
+  }
+}

@@ -32,7 +32,7 @@
   justify-content: center; /* Center items horizontally */
   flex-grow: 1; /* Allow items to grow to fill space */
   padding: 0.8rem; /* Give some padding around each item */
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .hamburger {

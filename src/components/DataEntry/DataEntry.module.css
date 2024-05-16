@@ -30,9 +30,9 @@
 
 .textArea {
   width: 50%;
-  margin-right: 20px; /* Adds some space between the text area and the preview */
-  height: 300px; /* Keeps the taller text area */
-  width: calc(50% - 20px);
+  margin-right: 2%; /* Adds some space between the text area and the preview */
+  height: 40vh; /* Height relative to viewport height */
+  width: calc(50% - 2%);
 }
 
 .preview {
@@ -41,7 +41,7 @@
   overflow: auto;
   white-space: pre-wrap;
   font-family: monospace;
-  height: 300px;
+  height: 40vh; /* Height relative to viewport height */
   width: calc(50% - 10px);
 }
 

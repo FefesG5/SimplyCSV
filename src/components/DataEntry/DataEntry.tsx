@@ -70,6 +70,7 @@ const DataEntry = () => {
 
   return (
     <div className={styles.dataEntryContainer}>
+      <h2 className={styles.title}>Data Entry Section</h2>
       <div className={styles.flexContainer}>
         <textarea
           className={styles.textArea}

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import styles from "./Home.module.css";
 
-const sampleData = `
-#16
+const sampleData = `#16
 作成日時
 2024年2月15日(木) 09:30
 
@@ -58,7 +57,7 @@ export default function Home() {
       <h1 className={styles.heading}>Simply CSV</h1>
       <div className={styles.sampleDataContainer}>
         <h2>Sample Data</h2>
-        <pre className={styles.sampleData}>{sampleData}</pre>
+        <div className={styles.sampleData}>{sampleData}</div>
         <button className={styles.copyButton} onClick={handleCopySampleData}>
           {copyStatus}
         </button>

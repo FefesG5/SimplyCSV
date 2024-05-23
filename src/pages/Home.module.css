@@ -14,10 +14,13 @@
 }
 
 .sampleData {
+  font-size: 1.3rem;
   background-color: #f9f9f9;
   padding: 10px;
   border: 1px solid #ddd;
   white-space: pre-wrap; /* To preserve whitespace and line breaks */
+  margin: 0;
+  font-family: monospace;
 }
 
 .copyButton {

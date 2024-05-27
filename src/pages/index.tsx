@@ -16,11 +16,12 @@ export default function Home() {
     <div className={styles.container}>
       <h1 className={styles.heading}>Simply CSV</h1>
       <div className={styles.sampleDataContainer}>
-        <h2>Sample Data</h2>
+        <div className={styles.titleBar}>
+          <button className={styles.copyButton} onClick={handleCopySampleData}>
+            {copyStatus}
+          </button>
+        </div>
         <div className={styles.sampleData}>{sampleData}</div>
-        <button className={styles.copyButton} onClick={handleCopySampleData}>
-          {copyStatus}
-        </button>
       </div>
     </div>
   );

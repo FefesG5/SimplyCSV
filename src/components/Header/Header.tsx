@@ -23,11 +23,11 @@ const Header: React.FC = () => {
       <div className={styles.logoContainer}>
         <Link href="/">
           <Image
-            src="/next.svg"
-            alt="Next.js Logo"
+            src="/try-angle-kids-logo.png"
+            alt="Try Angle Kids Logo"
             className={styles.logo}
-            width={128}
-            height={64}
+            width={60}
+            height={50}
           />
         </Link>
       </div>

@@ -5,6 +5,15 @@ test.describe("Home Page test", () => {
     await page.goto("http://localhost:3000");
   });
 
+  test("header contains logo linking to home", async ({ page }) => {
+    const logoLink = page.locator("header >> a[href='/']");
+    await expect(logoLink).toBeVisible();
+    const logoImage = logoLink.locator("img[alt='Try Angle Kids Logo']");
+    await expect(logoImage).toBeVisible();
+    await logoLink.click();
+    await expect(page).toHaveURL("http://localhost:3000/");
+  });
+
   test.describe("Navigation Tests", () => {
     test("navigation links are correctly set", async ({ page }) => {
       await expect(page.locator("text=About")).toHaveAttribute(

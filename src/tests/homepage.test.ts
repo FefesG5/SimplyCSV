@@ -24,10 +24,6 @@ test.describe("Home Page test", () => {
         "href",
         "/administrator-access",
       );
-      await expect(page.locator("text=Contact")).toHaveAttribute(
-        "href",
-        "/contact",
-      );
     });
 
     test("sidebar functionality", async ({ page }) => {

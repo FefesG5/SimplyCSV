@@ -35,8 +35,8 @@ const GoogleSignIn: React.FC<SignInProps> = ({ setError }) => {
         <Image
           src="/web_light_sq_SI.svg"
           alt="Google logo"
-          width={183}
-          height={40}
+          width={300}
+          height={50}
         />
       </button>
     </div>

@@ -46,8 +46,10 @@ test.describe("Home Page test", () => {
       await expect(heading).toBeVisible();
     });
 
-    test("displays the copy button with initial text", async ({page}) => {
-      const copyButton = page.locator("button", { hasText: "Copy Sample Data" });
+    test("displays the copy button with initial text", async ({ page }) => {
+      const copyButton = page.locator("button", {
+        hasText: "Copy Sample Data",
+      });
       await expect(copyButton).toBeVisible();
     });
 

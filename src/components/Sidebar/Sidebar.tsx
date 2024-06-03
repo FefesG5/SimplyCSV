@@ -40,8 +40,7 @@ const Sidebar = ({ isOpen, closeSidebar }: SidebarProps) => {
         <li className={styles.navItem} onClick={closeSidebar}>
           <Link href="/administrator-access">Administrator Access</Link>
         </li>
-        <li className={styles.navItem} onClick={closeSidebar}>
-        </li>
+        <li className={styles.navItem} onClick={closeSidebar}></li>
       </ul>
     </aside>
   );

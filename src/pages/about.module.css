@@ -8,12 +8,14 @@
 
 .heading,
 .subheading {
+  font-size: 1.5rem;
   color: #2c3e50; /* Deep, rich blue for contrast and readability */
   text-align: center;
   margin-bottom: 30px; /* Adds more space below headings for visual separation */
 }
 
 .paragraph {
+  font-size: 1.5rem;
   color: #34495e; /* Slightly lighter blue for body text, ensuring readability */
   line-height: 1.8;
   max-width: 800px; /* Keeps text lines at a comfortable reading length */
@@ -29,11 +31,13 @@
 }
 
 .listItem {
+  font-size: 1.5rem;
   margin-bottom: 15px; /* More space between items for readability */
   color: #34495e; /* Consistent with paragraph color for harmony */
 }
 
 .listItem strong {
+  font-size: 1.5rem;
   color: #e74c3c; /* A vibrant red for emphasis, attracting attention */
 }
 
@@ -46,16 +50,19 @@
 
   .heading,
   .subheading {
-    font-size: 20px; /* Slightly reduced to fit smaller screens better */
+    font-size: 1.4rem; /* Slightly reduced to fit smaller screens better */
     margin-bottom: 20px; /* Less space on smaller screens */
   }
 
   .paragraph,
   .listItem {
-    font-size: 14px; /* Adjust for optimal readability on smaller screens */
+    font-size: 1.2rem; /* Adjust for optimal readability on smaller screens */
   }
 
   .list {
     padding-left: 15px; /* Adjust list padding for smaller screens */
+  }
+  .listItem strong {
+    font-size: 1.2rem;
   }
 }

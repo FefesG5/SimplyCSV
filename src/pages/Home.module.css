@@ -1,14 +1,13 @@
 .container {
   padding: 20px;
-  max-width: 800px; /* Limit width on larger screens */
+  max-width: 800px;
   margin: auto;
 }
 
 .heading {
   font-size: 2.5rem;
   text-align: center;
-  padding: 1rem 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1rem 0 1rem;
 }
 
 .sampleDataContainer {
@@ -19,7 +18,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem 0;
+  padding-bottom: 0.2rem;
 }
 
 .sampleData {
@@ -27,7 +26,7 @@
   background-color: #f9f9f9;
   padding: 10px;
   border: 1px solid #ddd;
-  white-space: pre-wrap; /* To preserve whitespace and line breaks */
+  white-space: pre-wrap;
   margin: 0;
   font-family: monospace;
 }
@@ -52,7 +51,7 @@
 /* Media query for larger screens */
 @media (min-width: 1200px) {
   .container {
-    max-width: 800px; /* Adjust this value to your preference */
+    max-width: 800px;
   }
 }
 

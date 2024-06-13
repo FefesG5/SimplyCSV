@@ -16,6 +16,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ name, photoUrl }) => {
           height={50}
           alt="User Profile"
           priority
+          className={styles.userIcon}
         />
       </div>
       <div className={styles.userName}>{name || "Guest"}</div>

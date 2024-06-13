@@ -8,6 +8,11 @@
   margin-bottom: 10px;
 }
 
+.userIcon {
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
 .userName {
   color: #333;
   font-size: 18px;
